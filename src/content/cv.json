@@ -1,0 +1,94 @@
+{
+  "name": "Charles",
+  "email": "charlietalbot@gmail.com",
+  "summary": "Software Engineer with three years industry experience. I work in many modern frameworks and libraries",
+  "skills": {
+    "tools": [],
+    "frameworks": [],
+    "languages": [
+      "Javascript",
+      "Node",
+      "React",
+      "Redux",
+      "GraphQl"
+    ]
+  },
+  "projects": [
+    {
+      "title": "Four Walls",
+      "details": "An image sharing platform for creative projects built with Ruby on Rails",
+      "url": "foo.bar"
+    },
+    {
+      "title": "Soap Stone",
+      "details": "A research tool built for querying museum collections, and creating personal timelines",
+      "url": "http://lookout800.github.io/Soap_Stone_App/#/"
+    }
+  ],
+  "experience": {
+    "technical": [
+      {
+        "name": "Cengage Learning, Inc.",
+        "role": "Software Engineer II",
+        "start": "2015",
+        "end": "present",
+        "details": "Built responsive web applications for high education courses. Took leadership role in running weekly tech talk."
+      },
+      {
+        "name": "General Assembly Web Development Immersion program",
+        "start": "2014",
+        "end": "2015",
+        "role": "student",
+        "details": "Built and deployed three web based applications"
+      },
+      {
+        "name": "Cranbrook Academy of Art, MFA",
+        "start": "2012",
+        "end": "2013",
+        "details": "Learned design fundamentals while producing studio design objects"
+      }
+    ],
+    "design": [
+      {
+        "name": "Harvard University Ceramics, Studio Technician",
+        "start": 2014,
+        "end": 2015,
+        "role": "",
+        "details": "Taught undergraduate and graduate students material and sculptural concepts in a collaborative environment."
+      },
+      {
+        "name": "Artist Assistant – Anders Ruhwald, Artist-in-Residence, Cranbrook",
+        "start": 2013,
+        "end": 2015,
+        "role": "Curatorial Assistant to Anders Ruhwald",
+        "details": [
+          "Production of exhibitions for Philadelphia Clay Art Center",
+          "Production of design studio objects with artist"
+        ]
+      },
+      {
+        "name": "Apprentice – Toshiko Takaezu Studio,",
+        "start": 2008,
+        "end": 2010,
+        "role": "Managed studio and collection for international Artist",
+        "details": [
+          "Produced museum correspondence, including the Okinawa Prefectural Museum"
+        ]
+      }
+    ]
+  },
+  "education": {
+    "General Assembly, Web Development Immersive": {
+      "date": 2015,
+      "details": "aaa"
+    },
+    "Cranbrook Academy of Art, MFA, Ceramics": {
+      "date": 2013,
+      "details": "bbb"
+    },
+    "Skidmore College, BA, French Lit, Studio Art": {
+      "date": 2007,
+      "details": "ccc"
+    }
+  }
+}
