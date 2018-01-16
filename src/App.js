@@ -1,61 +1,39 @@
 import React, { Component } from 'react';
+
 import './App.css';
 import cv from './content/cv.json';
+import avatar from './content/charles_icon.jpeg';
+import appNav from './components/appNav';
+import appFooter from './components/appFooter';
+import projectSection from './components/projectSection';
 
-const { name, projects, skills, summary, experience } = cv;
+const { name, projects, skills, summary, experience, links } = cv;
 const { technical, design } = experience;
 const { languages } = skills;
 
-const mapSection = (sections) => {
-  return sections.map(({ title, details }, index) => {
-    return (
-      <section key={index}>
-        <h4>
-          <a src="foo.com">{title}</a>
-        </h4>
-        <p>{details}</p>
-      </section>
-    );
-  });
-};
-
 const mapSkills = () => {
   return (
-    <div>
-      {languages.map((lang, key) => {
-        return <p key={key}>{lang}</p>
-      })}
-    </div>
+    <section className="skillsSection">
+      <h4>Technical Skills</h4>
+      <ul>
+        {languages.map((lang, key) => {
+          return <li key={key}>{lang}</li>
+        })}
+      </ul>
+    </section>
   );
 };
 
 const mapExperiences = (experiences) => {
   return experiences.map((experience, key) => {
     return (
-      <section key={key}>
+      <section className="experience" key={key}>
         <h4>{experience.name}</h4>
         <p>{experience.role}</p>
         <p>{experience.details}</p>
       </section>
     )
   });
-};
-
-const appNav = () => {
-  return (
-    <div className="appNav">appNav</div>
-  )
-};
-
-
-const appFooter = () => {
-  return (
-    <div className="appFooter">appFooter</div>
-  )
-};
-
-const showNav = (scrollTop) => {
-  return scrollTop > 150
 };
 
 class App extends Component {
@@ -76,19 +54,30 @@ class App extends Component {
   render() {
     return (
       <div id="appRoot" className="App">
-        {showNav(this.state.scrollTop) && appNav()}
+        {appNav(this.state.scrollTop)}
         <header className="App-header">
           <h1 className="App-title">{name}</h1>
         </header>
-        <p className="App-intro"> {summary} </p>
-        {mapSkills()}
-        {mapExperiences(technical)}
-        {mapExperiences(design)}
-        {mapSection(projects)}
-        {appFooter()}
+        <div id="contentContainer" className="contentContainer">
+          <h2 id="About">About</h2>
+          <div className="about">
+            <img alt="portrait of the artist as a young man" className="avatar" src={avatar} />
+            <p className="App-intro">{summary} </p>
+          </div>
+          <h2 id="Projects">Projects</h2>
+          <div className="projectSection">
+            {projectSection(projects)}
+          </div>
+          <h2 id="Experience">Experience</h2>
+          {mapSkills()}
+          {mapExperiences(technical)}
+          {mapExperiences(design)}
+        </div>
+        {appFooter(links)}
       </div>
     );
   }
+
 }
 
 export default App;

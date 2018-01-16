@@ -1,28 +1,77 @@
 {
-  "name": "Charles",
+  "name": "Charles Talbot",
   "email": "charlietalbot@gmail.com",
-  "summary": "Software Engineer with three years industry experience. I work in many modern frameworks and libraries",
+  "summary": "Hi! I'm a Software Engineer with fullstack industry experience. I work in many modern libraries, frameworks, and am passionate about rich web experiences. I'm dedicated to the intersection of technology, art and design and spend long hours designing in digital and analog environments. I'm always looking for creative opportunities that will allow me to integrate my creative background to execute impactful ideas.",
   "skills": {
     "tools": [],
     "frameworks": [],
     "languages": [
       "Javascript",
-      "Node",
       "React",
       "Redux",
-      "GraphQl"
+      "Node",
+      "GraphQl",
+      "Apollo",
+      "Sass",
+      "Jenkins",
+      "Webpack"
     ]
   },
+  "links": [
+    { "name": "linkedin",
+      "icon": "fab fa-linkedin-in",
+      "url": "https://www.linkedin.com/in/charlestalbotiii"
+    },
+    { "name": "github",
+      "icon": "fab fa-github",
+      "url": "https://github.com/LookOut800"
+    },
+    {
+      "name": "email",
+      "icon": "fas fa-envelope",
+      "url": "far fa-address-card"
+    },
+    {
+      "name": "twitter",
+      "icon": "fab fa-twitter",
+
+      "url": "https://twitter.com/charlietal"
+    }
+  ],
   "projects": [
     {
       "title": "Four Walls",
+      "languages": "Ruby",
+      "icon": "devicon-ruby-plain",
+      "details": "An image sharing platform for creative projects built with Ruby on Rails",
+      "url": "foo.bar"
+    },
+    {
+      "title": "this site",
+      "languages": "React",
+      "icon": "devicon-react-original",
       "details": "An image sharing platform for creative projects built with Ruby on Rails",
       "url": "foo.bar"
     },
     {
       "title": "Soap Stone",
+      "languages": "js, material design, node",
+      "icon": "devicon-javascript-plain",
       "details": "A research tool built for querying museum collections, and creating personal timelines",
       "url": "http://lookout800.github.io/Soap_Stone_App/#/"
+    },
+    {
+      "title": "d3-basics",
+      "icon": "devicon-d3js-plain",
+      "languages": "js, d3",
+      "details": "d-3 basics, a starter app for a visual challenge",
+      "url": "http://lookout800.github.io/d3-basics"    },
+    {
+      "title": "Image Archive",
+      "languages": "js",
+      "icon": "devicon-nodejs-plain",
+      "details": "an archive for various creative pursuits",
+      "url": "https://github.com/LookOut800/cmt_images"
     }
   ],
   "experience": {
@@ -38,13 +87,14 @@
         "name": "General Assembly Web Development Immersion program",
         "start": "2014",
         "end": "2015",
-        "role": "student",
-        "details": "Built and deployed three web based applications"
+        "role": "Web Development Immersive",
+        "details": "Learned a host of CS skills, front -end technologies, built and deployed three web based applications"
       },
       {
         "name": "Cranbrook Academy of Art, MFA",
         "start": "2012",
         "end": "2013",
+        "role": "Master of Fine Arts, Ceramics",
         "details": "Learned design fundamentals while producing studio design objects"
       }
     ],
@@ -53,7 +103,7 @@
         "name": "Harvard University Ceramics, Studio Technician",
         "start": 2014,
         "end": 2015,
-        "role": "",
+        "role": "Instructor, Studio Technician",
         "details": "Taught undergraduate and graduate students material and sculptural concepts in a collaborative environment."
       },
       {
