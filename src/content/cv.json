@@ -29,12 +29,11 @@
     {
       "name": "email",
       "icon": "fas fa-envelope",
-      "url": "far fa-address-card"
+      "url": "https://mail.google.com/mail/?view=cm&fs=1&to=charlietalbot@gmail.com"
     },
     {
       "name": "twitter",
       "icon": "fab fa-twitter",
-
       "url": "https://twitter.com/charlietal"
     }
   ],
@@ -47,11 +46,11 @@
       "url": "foo.bar"
     },
     {
-      "title": "this site",
+      "title": "this website",
       "languages": "React",
       "icon": "devicon-react-original",
       "details": "An image sharing platform for creative projects built with Ruby on Rails",
-      "url": "foo.bar"
+      "url": "https://github.com/LookOut800/four_walls_app"
     },
     {
       "title": "Soap Stone",
