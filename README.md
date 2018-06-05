@@ -1,1 +1,0 @@
-# Charles Talbot - Web Developer
