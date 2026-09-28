@@ -173,6 +173,29 @@ nav.primary a:hover{ color:var(--clay); border-color:var(--clay); }
   .history-row .tag{ grid-column:1; grid-row:auto; justify-self:start; margin-top:4px; }
 }
 
+/* ---- artist statement --------------------------------------------------*/
+.statement-lede{ color:var(--muted); font-size:17px; margin-top:20px; max-width:60ch; }
+.statement-text{
+  color:#d6c9ba; font-size:19px; font-style:italic; margin-top:20px; max-width:62ch;
+  line-height:1.75; border-left:3px solid var(--clay); padding-left:22px;
+}
+.sub-eyebrow{
+  font-size:12px; letter-spacing:2.5px; text-transform:uppercase; color:var(--moss);
+  margin-top:44px; margin-bottom:16px; font-weight:700;
+}
+.exhibit-list{ list-style:none; margin:0; padding:0; border-top:1px solid var(--line-soft); }
+.exhibit-list li{
+  display:grid; grid-template-columns:1fr auto auto; gap:18px;
+  padding:13px 0; border-bottom:1px solid var(--line-soft); font-size:15px; align-items:baseline;
+}
+.exhibit-list .ex-title{ font-weight:600; color:var(--ink); }
+.exhibit-list .ex-year{ color:var(--clay); font-variant-numeric:tabular-nums; }
+.exhibit-list .ex-place{ color:var(--muted); text-align:right; }
+@media (max-width:640px){
+  .exhibit-list li{ grid-template-columns:1fr; gap:2px; padding:10px 0; }
+  .exhibit-list .ex-place{ text-align:left; }
+}
+
 /* ---- contact / footer ---------------------------------------------------*/
 footer.contact{ padding-block:72px 80px; text-align:center; }
 footer.contact h2{ font-size:30px; }
