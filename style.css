@@ -137,6 +137,16 @@ nav.primary a:hover{ color:var(--clay); border-color:var(--clay); }
 .char-strip figcaption{ text-align:center; font-size:12px; color:var(--muted); margin-top:8px; letter-spacing:.5px; }
 @media (max-width:560px){ .char-strip{ grid-template-columns:repeat(2,1fr); } }
 
+/* Corsair's Crawl uses full-res AI-generated art, not a literal low-res
+   pixel grid like Sprite Forge — smooth downscaling, not nearest-neighbour. */
+.char-strip.cols-3{ grid-template-columns:repeat(3,1fr); }
+.char-strip.cols-3 img{ image-rendering:auto; }
+.cc-bg{
+  margin-top:28px; border-radius:10px; overflow:hidden;
+  border:1px solid var(--line-soft); background:var(--bg-2);
+}
+.cc-bg img{ width:100%; display:block; }
+
 /* ---- experience: a real timeline, not a resume dump -------------------*/
 .timeline{ margin-top:32px; }
 .tl-company{ margin-bottom:36px; }
