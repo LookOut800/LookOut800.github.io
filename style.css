@@ -18,7 +18,55 @@
   --clay-ink:#1c0d07;
   --sand:#d8c9a8;
   --moss:#7f9678;
+  --ink-soft:#d6c9ba;
+  --clay-hover:#d97c5d;
+  --fineprint:#544c42;
+  --featured-glow:#241d17;
   color-scheme: dark;
+}
+
+/* ---- light theme: explicit choice (data-theme="light"), or system
+   preference with no explicit choice made yet. Cool "porcelain" bg rather
+   than a warm cream — keeps the clay/rust accent reading as a deliberate
+   contrast (glazed porcelain vs. raw clay) instead of a cream+rust combo
+   that reads as generic "AI product" branding. -------------------------*/
+:root[data-theme="light"]{
+  --bg:#f1f1ec;
+  --bg-2:#e7e6de;
+  --panel:#fbfbf8;
+  --line:#d7d5c9;
+  --line-soft:#e2e0d5;
+  --ink:#211f1a;
+  --muted:#6b675c;
+  --clay:#a8472b;
+  --clay-ink:#fbf1e6;
+  --sand:#7c5a2e;
+  --moss:#4f6b4a;
+  --ink-soft:#4a473d;
+  --clay-hover:#c15b39;
+  --fineprint:#a8a495;
+  --featured-glow:#e6ddd0;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme]){
+    --bg:#f1f1ec;
+    --bg-2:#e7e6de;
+    --panel:#fbfbf8;
+    --line:#d7d5c9;
+    --line-soft:#e2e0d5;
+    --ink:#211f1a;
+    --muted:#6b675c;
+    --clay:#a8472b;
+    --clay-ink:#fbf1e6;
+    --sand:#7c5a2e;
+    --moss:#4f6b4a;
+    --ink-soft:#4a473d;
+    --clay-hover:#c15b39;
+    --fineprint:#a8a495;
+    --featured-glow:#e6ddd0;
+    color-scheme: light;
+  }
 }
 
 *{box-sizing:border-box;}
@@ -61,13 +109,14 @@ header.hero{
 }
 header.hero img.portrait{
   width:132px; height:132px; border-radius:50%; object-fit:cover;
-  border:1px solid var(--line); filter:grayscale(.15);
+  border:1px solid var(--line);
+  filter:grayscale(.1) sepia(.22) saturate(1.25) hue-rotate(-8deg) brightness(1.1);
 }
 .hero-text h1{ font-size:clamp(38px,6vw,58px); line-height:1.05; }
 .hero-text .role{
   color:var(--clay); font-size:16px; letter-spacing:.5px; margin-top:10px; font-weight:600;
 }
-.hero-text p.bio{ max-width:64ch; color:#d6c9ba; margin-top:22px; font-size:18px; }
+.hero-text p.bio{ max-width:64ch; color:var(--ink-soft); margin-top:22px; font-size:18px; }
 
 nav.primary{
   display:flex; gap:28px; flex-wrap:wrap; margin-top:32px;
@@ -85,6 +134,19 @@ nav.primary a:hover{ color:var(--clay); border-color:var(--clay); }
 .social-row a:hover{ color:var(--clay); border-color:var(--clay); }
 .social-row svg{ width:17px; height:17px; fill:currentColor; }
 
+.theme-toggle{
+  display:inline-flex; gap:2px; margin-top:26px; padding:4px;
+  border:1px solid var(--line); border-radius:20px; background:var(--panel);
+}
+.theme-toggle button{
+  appearance:none; border:none; background:transparent; color:var(--muted);
+  font-family:inherit; font-size:11px; letter-spacing:.5px; text-transform:uppercase;
+  font-weight:700; padding:6px 13px; border-radius:16px; cursor:pointer;
+  transition:background .15s, color .15s;
+}
+.theme-toggle button:hover{ color:var(--ink); }
+.theme-toggle button[aria-pressed="true"]{ background:var(--clay); color:var(--clay-ink); }
+
 @media (max-width:640px){
   header.hero{ grid-template-columns:1fr; text-align:center; justify-items:center; }
   nav.primary,.social-row{ justify-content:center; }
@@ -92,7 +154,7 @@ nav.primary a:hover{ color:var(--clay); border-color:var(--clay); }
 
 /* ---- featured: sprite forge -------------------------------------------*/
 .featured{
-  background:radial-gradient(ellipse at top left, #241d17, var(--panel));
+  background:radial-gradient(ellipse at top left, var(--featured-glow), var(--panel));
   border:1px solid var(--line); border-radius:18px;
   padding:40px;
 }
@@ -113,7 +175,7 @@ nav.primary a:hover{ color:var(--clay); border-color:var(--clay); }
 .featured.alt h2{ font-family:'Fraunces',serif; font-size:30px; color:var(--ink); letter-spacing:0; }
 .wip-note{ margin-top:22px; color:var(--muted); font-size:14px; font-style:italic; }
 
-.featured p.desc{ margin-top:20px; max-width:62ch; color:#d6c9ba; font-size:17px; }
+.featured p.desc{ margin-top:20px; max-width:62ch; color:var(--ink-soft); font-size:17px; }
 .featured ul.points{ margin:18px 0 0; padding-left:20px; color:var(--muted); }
 .featured ul.points li{ margin-bottom:7px; }
 .featured .cta-row{ display:flex; gap:14px; margin-top:28px; flex-wrap:wrap; }
@@ -123,7 +185,7 @@ nav.primary a:hover{ color:var(--clay); border-color:var(--clay); }
   text-decoration:none; border:1px solid transparent; cursor:pointer;
 }
 .btn-primary{ background:var(--clay); color:var(--clay-ink); }
-.btn-primary:hover{ background:#d97c5d; color:var(--clay-ink); }
+.btn-primary:hover{ background:var(--clay-hover); color:var(--clay-ink); }
 .btn-ghost{ border-color:var(--line); color:var(--ink); }
 .btn-ghost:hover{ border-color:var(--clay); color:var(--clay); }
 
@@ -143,6 +205,30 @@ nav.primary a:hover{ color:var(--clay); border-color:var(--clay); }
 }
 .cc-bg img{ width:100%; display:block; }
 
+/* ---- projects grid: lighter cards for work that isn't a featured section */
+.projects-grid{
+  margin-top:28px; display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:18px;
+}
+.project-card{
+  background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px;
+  display:flex; flex-direction:column; gap:9px; overflow:hidden;
+}
+.project-card .thumb{
+  margin:-22px -22px 4px; aspect-ratio:16/9; background:var(--bg-2); overflow:hidden;
+}
+.project-card .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+.project-card .tag{
+  align-self:flex-start; font-size:11px; letter-spacing:.5px; color:var(--moss);
+  border:1px solid var(--moss); border-radius:20px; padding:3px 11px; font-weight:700; text-transform:uppercase;
+}
+.project-card h3{ font-size:19px; }
+.project-card h3 a{ color:var(--ink); text-decoration:none; }
+.project-card h3 a:hover{ color:var(--clay); }
+.project-card p{ color:var(--muted); font-size:14.5px; }
+.project-card .card-links{ margin-top:auto; padding-top:6px; font-size:13px; display:flex; gap:16px; }
+.project-card .card-links a{ color:var(--sand); }
+.projects-empty{ margin-top:24px; color:var(--muted); font-style:italic; }
+
 /* ---- experience: a real timeline, not a resume dump -------------------*/
 .timeline{ margin-top:32px; }
 .tl-company{ margin-bottom:36px; }
@@ -155,7 +241,7 @@ nav.primary a:hover{ color:var(--clay); border-color:var(--clay); }
 .tl-role{ display:grid; grid-template-columns:200px 1fr; gap:6px 24px; padding-top:18px; }
 .tl-role .role-meta{ color:var(--muted); font-size:14px; line-height:1.5; }
 .tl-role .role-title{ font-weight:700; color:var(--ink); }
-.tl-role p{ color:#c9bcae; font-size:15px; }
+.tl-role p{ color:var(--ink-soft); font-size:15px; }
 @media (max-width:640px){
   .tl-role{ grid-template-columns:1fr; }
 }
@@ -190,7 +276,7 @@ nav.primary a:hover{ color:var(--clay); border-color:var(--clay); }
 /* ---- artist statement --------------------------------------------------*/
 .statement-lede{ color:var(--muted); font-size:17px; margin-top:20px; max-width:60ch; }
 .statement-text{
-  color:#d6c9ba; font-size:19px; font-style:italic; margin-top:20px; max-width:62ch;
+  color:var(--ink-soft); font-size:19px; font-style:italic; margin-top:20px; max-width:62ch;
   line-height:1.75; border-left:3px solid var(--clay); padding-left:22px;
 }
 .sub-eyebrow{
@@ -210,9 +296,32 @@ nav.primary a:hover{ color:var(--clay); border-color:var(--clay); }
   .exhibit-list .ex-place{ text-align:left; }
 }
 
+/* ---- sub-pages (blog): a smaller header than the homepage hero --------*/
+.subhead{ padding-block:64px 40px; }
+.subhead .back-link{
+  font-size:13px; letter-spacing:1px; text-transform:uppercase; font-weight:700;
+  color:var(--muted); text-decoration:none;
+}
+.subhead .back-link:hover{ color:var(--clay); }
+.subhead h1{ margin-top:18px; font-size:clamp(32px,5vw,46px); }
+.subhead p.bio{ margin-top:14px; color:var(--muted); max-width:60ch; font-size:16px; }
+
+.blog-list{ margin-top:8px; border-top:1px solid var(--line-soft); }
+.blog-row{ display:block; padding:22px 0; border-bottom:1px solid var(--line-soft); text-decoration:none; color:inherit; }
+.blog-row .blog-date{
+  font-size:12px; letter-spacing:1px; text-transform:uppercase; color:var(--moss); font-weight:700;
+}
+.blog-row h3{ margin-top:8px; font-size:21px; color:var(--ink); }
+.blog-row:hover h3{ color:var(--clay); }
+.blog-row p{ margin-top:8px; color:var(--muted); font-size:15px; }
+
+.post-body{ margin-top:8px; max-width:66ch; }
+.post-body p{ color:var(--ink-soft); font-size:17px; margin-bottom:20px; }
+.post-body p:last-child{ margin-bottom:0; }
+
 /* ---- contact / footer ---------------------------------------------------*/
 footer.contact{ padding-block:72px 80px; text-align:center; }
 footer.contact h2{ font-size:30px; }
 footer.contact p{ color:var(--muted); margin-top:12px; }
 footer.contact .social-row{ justify-content:center; margin-top:26px; }
-footer.contact .fineprint{ margin-top:44px; font-size:13px; color:#544c42; }
+footer.contact .fineprint{ margin-top:44px; font-size:13px; color:var(--fineprint); }
