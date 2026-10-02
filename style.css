@@ -291,6 +291,7 @@ nav.primary a:hover{ color:var(--clay); border-color:var(--clay); }
 .exhibit-list .ex-title{ font-weight:600; color:var(--ink); }
 .exhibit-list .ex-year{ color:var(--clay); font-variant-numeric:tabular-nums; }
 .exhibit-list .ex-place{ color:var(--muted); text-align:right; }
+.statement-link{ margin-top:20px; font-size:15px; font-weight:600; }
 @media (max-width:640px){
   .exhibit-list li{ grid-template-columns:1fr; gap:2px; padding:10px 0; }
   .exhibit-list .ex-place{ text-align:left; }
