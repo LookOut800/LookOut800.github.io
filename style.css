@@ -105,11 +105,11 @@ section + section{ border-top:1px solid var(--line-soft); }
 /* ---- hero ------------------------------------------------------------ */
 header.hero{
   padding-block:88px 56px;
-  display:grid; grid-template-columns:auto 1fr; gap:40px; align-items:center;
+  display:grid; grid-template-columns:auto 1fr; gap:40px; align-items:start;
 }
 header.hero img.portrait{
   width:132px; height:132px; border-radius:50%; object-fit:cover;
-  border:1px solid var(--line);
+  border:1px solid var(--line); margin-top:6px;
   filter:grayscale(.1) sepia(.22) saturate(1.25) hue-rotate(-8deg) brightness(1.1);
 }
 .hero-text h1{ font-size:clamp(38px,6vw,58px); line-height:1.05; }
